@@ -13,7 +13,7 @@
     }
 }
 .reg-box-close {
-    animation-duration: 2s;
+    animation-duration: 3s;
     animation-name: reg-box-close;
     left: 100%;
 }

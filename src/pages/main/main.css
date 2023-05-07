@@ -1,0 +1,79 @@
+.main-greet {
+    background-image: url("../../assets/bg.jpg");
+}
+.main-greet-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation-duration: 1.5s;
+    animation-name: main-greet-content;
+}
+@keyframes main-greet-content {
+    from {
+        top: -200vh
+    }
+    to {
+        top: -105vh;
+    }
+}
+.mood-box{
+    position: relative;
+    animation-duration: 4.5s;
+    animation-name:mood-box;
+    top: -13vh;
+    left: -23%;
+}
+@keyframes mood-box {
+    0%{
+        top:0;
+        left: 0;
+    }
+    33%{
+        top:0;
+        left: 0;
+    }
+    66%{
+        top:-13vh;
+        left: 0;
+    }
+    100%{
+        top: -13vh;
+        left: -23%;
+    }
+}
+.diary-box{
+    position: relative;
+    animation-duration: 4.5s;
+    animation-name:diary-box;
+    top: 13vh;
+    left: 23%;
+}
+@keyframes diary-box {
+    0%{
+        top:0;
+        left: 0;
+    }
+    33%{
+        top:0;
+        left: 0;
+    }
+    66%{
+        top:13vh;
+        left: 0;
+    }
+    100%{
+        top: 13vh;
+        left: 23%;
+    }
+}
+.main-greet-content-title {
+    color: var(--dark-green);
+    font-size: 300px;
+    line-height: 220px;
+    position: relative;
+}
+
+.main-greet-content-span {
+    display: block;
+}

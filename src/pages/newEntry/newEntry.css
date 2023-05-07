@@ -1,0 +1,20 @@
+.new-entry{
+    background-image: url("../../assets/bg.jpg");
+    justify-content: center;
+}
+.new-entry-content{
+    display: flex;
+    align-self: center;
+    margin: 0 auto;
+    justify-content: center;
+    width: max-content;
+    height: max-content;
+    background-color: var(--lite-green);
+}
+.new-entry-form-input{
+    font-size: 20px;
+    background-color: #ffeadb;
+    color: var(--dark-green);
+    border: 2px solid var(--dark-green);
+    width: ;
+}
