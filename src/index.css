@@ -57,6 +57,7 @@ code {
 :root {
     --lite-green: #a0c1b8;
     --dark-green: #3f4441;
+    --bg-lite: #ffeadb;
     --font-main: 'Outfit', sans-serif;
     --font-curs: 'Edu QLD Beginner', cursive
 }
