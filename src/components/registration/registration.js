@@ -1,22 +1,33 @@
 import React, {useState} from "react";
 import "./registration.css"
+import {registrationApi} from "../../services/registration";
 
 export const Registration = ({...props}) => {
-    const [pass,setPass]= useState('');
-    const [passControl,setPassControl]= useState('');
+    const [pass, setPass] = useState('');
+    const [passControl, setPassControl] = useState('');
+    const [isEquals, setIsEquals] = useState(true)
+
     function handleSubmit(e) {
         e.preventDefault();
-        if(pass === passControl){
+        let response;
+        if (pass === passControl) {
             const form = e.target;
             const formData = new FormData(form);
-            fetch('https://mooddiarybackend-production.up.railway.app/swagger-ui/index.html', {
-                method: form.method,
-                body: formData
-            }).then();
+            formData.set('imageUrl', '');
             const formJson = Object.fromEntries(formData.entries());
             console.log(formJson);
-        }
-        else console.log("ERROR!!!!!!!!!!!!")
+            registrationApi(formJson, form.method).then(
+                ((e) => {
+                    return e
+                })
+            ).catch(
+                ((e) => {
+                    return e
+                })
+            )
+        } else setIsEquals(false)
+        console.log(response);
+        return response;
     }
 
     return (
@@ -26,14 +37,14 @@ export const Registration = ({...props}) => {
                 <input type="email" placeholder="email" name="email" className="entry-box-form-input" required/>
                 <input type="text" placeholder="username" name="username" className="entry-box-form-input" required/>
                 <textarea maxLength="200" className="entry-box-form-input" name="about" placeholder="about"/>
-                <input type="date" name="date" className="entry-box-form-input" required/>
+                <input type="date" name="dateOfBirth" className="entry-box-form-input" required/>
 
                 <input type="password" placeholder="password"
-                       value={pass} onChange={e=> setPass(e.target.value)}
+                       value={pass} onChange={e => setPass(e.target.value)}
                        className="entry-box-form-input" required/>
 
                 <input type="password" name="password" placeholder="repeat password"
-                       value={passControl} onChange={e=> setPassControl(e.target.value)}
+                       value={passControl} onChange={e => setPassControl(e.target.value)}
                        className="entry-box-form-input" required/>
 
                 <input type="file" name="imageUrl" className="entry-box-form-input"/>
