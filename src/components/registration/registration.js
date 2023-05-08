@@ -9,31 +9,23 @@ export const Registration = ({...props}) => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        let response;
         if (pass === passControl) {
-            const form = e.target;
+            let form = e.target;
             const formData = new FormData(form);
             formData.set('imageUrl', '');
+
             const formJson = Object.fromEntries(formData.entries());
-            console.log(formJson);
-            registrationApi(formJson, form.method).then(
-                ((e) => {
-                    return e
-                })
-            ).catch(
-                ((e) => {
-                    return e
-                })
-            )
+
+            registrationApi(formJson, form.method)
+                .then(response => console.log("Actual response:" + response))
+                .catch(error => console.log("Error: " + error))
         } else setIsEquals(false)
-        console.log(response);
-        return response;
     }
 
     return (
         <div className={props.isNowLogin ? "entry-box reg-box-close" : " entry-box reg-box-open"}>
             <h1 className="entry-box-title">Registration</h1>
-            <form method="post" onSubmit={handleSubmit} className="entry-box-form">
+            <form onSubmit={handleSubmit} className="entry-box-form">
                 <input type="email" placeholder="email" name="email" className="entry-box-form-input" required/>
                 <input type="text" placeholder="username" name="username" className="entry-box-form-input" required/>
                 <textarea maxLength="200" className="entry-box-form-input" name="about" placeholder="about"/>
