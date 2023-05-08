@@ -11,8 +11,10 @@ export const registrationApi = async (formData, method) => {
 
     return await response.json();
 }
-export const authenticateApi = async (formJson, method) => {
-    let response = await fetch("https://mooddiarybackend-production.up.railway.app//api/v1/auth/authenticate", {
+export const authenticateApi = async (formData, method) => {
+    const formJson = Object.fromEntries(formData.entries());
+    console.log(formJson)
+    let response = await fetch("https://mooddiarybackend-production.up.railway.app/api/v1/auth/authenticate", {
         method: method,
         body: JSON.stringify(formJson),
         headers: {

@@ -32,7 +32,7 @@ export const Registration = ({...props}) => {
                 <form method="POST" onSubmit={handleSubmit} className="entry-box-form">
                     <input type="email" placeholder="email" name="email" className="entry-box-form-input" required/>
                     <input type="text" placeholder="username" name="username" className="entry-box-form-input"
-                           required/>
+                           minLength='4' maxLength='12' required/>
                     <textarea maxLength="200" className="entry-box-form-input" name="about" placeholder="about"/>
                     <input type="date" name="dateOfBirth" className="entry-box-form-input" required/>
 
@@ -41,14 +41,14 @@ export const Registration = ({...props}) => {
                         setPass(e.target.value);
                         setIsEquals((true))
                     }}
-                           className="entry-box-form-input" required/>
+                           minLength='6' maxLength='12' className="entry-box-form-input" required/>
 
                     <input type="password" name="password" placeholder="repeat password"
                            value={passControl} onChange={e => {
                         setPassControl(e.target.value);
                         setIsEquals((true))
                     }}
-                           className="entry-box-form-input" required/>
+                           minLength='6' maxLength='12' className="entry-box-form-input" required/>
 
                     <input type="file" name="imageUrl" className="entry-box-form-input"/>
                     <button type="submit" className="entry-box-form-input">Submit</button>
