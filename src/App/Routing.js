@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import {Routes, Route, useLocation} from "react-router-dom";
 import {Entry} from "../pages/entry/entry";
 import {Main} from "../pages/main/main";
 import {Layout} from "../components/layout/layout";
