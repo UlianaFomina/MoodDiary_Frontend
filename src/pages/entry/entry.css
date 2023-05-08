@@ -54,3 +54,34 @@ button.entry-box-form-input {
     background-color: transparent;
     color: var(--dark-green)
 }
+
+.entry-message {
+    opacity: 0;
+    position: absolute;
+    top: 5vh;
+    left: 2vw;
+    padding: 3%;
+    border-radius: 10px;
+    background-color: var(--lite-corall);
+    animation-name: entry-message;
+    animation-duration: 5s;
+}
+
+@keyframes entry-message {
+    0% {
+        opacity: 100%;
+        top: -50vh;
+    }
+    25% {
+        top: 5vh;
+        opacity: 100%;
+    }
+    50% {
+        top: 5vh;
+        opacity: 100%;
+    }
+    100% {
+        top: 5vh;
+        opacity: 0;
+    }
+}

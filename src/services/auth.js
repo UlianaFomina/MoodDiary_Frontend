@@ -1,4 +1,4 @@
-const registrationApi = async (formJson, method) => {
+export const registrationApi = async (formJson, method) => {
     let response = await fetch("https://mooddiarybackend-production.up.railway.app/api/v1/auth/registration", {
         method: method,
         body: JSON.stringify(formJson),
@@ -9,11 +9,22 @@ const registrationApi = async (formJson, method) => {
 
     return await response.json();
 }
-
+export const getErrMess = (response, setFunc) => {
+    if (response !== undefined) {
+        let mess
+        if (response.error !== undefined) {
+            mess = Object.values(response.error).join('')
+            setFunc(mess)
+        } else {
+            mess = Object.values(response.errors[0].message).join('')
+            setFunc(mess)
+        }
+    }
+}
 const demoRequestApi = async () => {
     let response = await fetch("https://mooddiarybackend-production.up.railway.app/api/v1/demo");
 
     return await response.json();
 }
 
-export {demoRequestApi, registrationApi};
+export {demoRequestApi};
