@@ -15,10 +15,8 @@ export const Registration = ({...props}) => {
             setIsEquals(true);
             const form = e.target;
             const formData = new FormData(form);
-            formData.set('imageUrl', '');
-            const formJson = Object.fromEntries(formData.entries());
 
-            registrationApi(formJson, form.method)
+            registrationApi(formData, form.method)
                 .then(response => {
                    getErrMess(response,setErrorMess)
 
