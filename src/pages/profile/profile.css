@@ -1,0 +1,7 @@
+.profile-content{
+    width: 100%;
+    height: fit-content;
+    padding-top: 2vh;
+    justify-content: center;
+    top:-100vh;
+}

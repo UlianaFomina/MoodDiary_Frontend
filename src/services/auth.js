@@ -35,6 +35,7 @@ export const getErrMess = (response, setFunc) => {
             setFunc(mess)
         }
     }
+
 }
 const demoRequestApi = async () => {
     let response = await fetch("https://mooddiarybackend-production.up.railway.app/api/v1/demo");

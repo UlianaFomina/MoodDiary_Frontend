@@ -1,14 +1,33 @@
-.header{
+.header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 90vh;
+    height: 92vh;
     width: max-content;
-    padding: 5vh 2%;
-    background-color: var(--lite-green);
+    padding: 4vh 0.5%;
+    background-color: var(--dark-green);
 }
-.header-high{
+
+.header-high {
     display: flex;
+    align-items: center;
     flex-direction: column;
+}
+
+.header-link {
+    margin-bottom: 2.5vh;
+}
+
+.header-link:last-child {
+    margin-bottom: 0;
+}
+
+.header-link-svg {
+    fill: var(--lite-green);
+    transition: 1s;
+}
+
+.header-link-svg:hover {
+    fill: var(--lite-corall);
 }

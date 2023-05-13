@@ -2,6 +2,7 @@ import React from "react";
 import "./main.css"
 
 export const Main = ({...props}) => {
+
     return (<>
         <div className={"main wrap"}>
             <div className={"main-greet container-bg"}>

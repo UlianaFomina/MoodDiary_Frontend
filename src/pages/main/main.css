@@ -1,6 +1,7 @@
 .main-greet {
     background-image: url("../../assets/bg.jpg");
 }
+
 .main-greet-content {
     display: flex;
     flex-direction: column;
@@ -72,6 +73,8 @@
     font-size: 300px;
     line-height: 220px;
     position: relative;
+    text-shadow: 10px 25px 30px var(--lite-green);
+    user-select: none;
 }
 
 .main-greet-content-span {
