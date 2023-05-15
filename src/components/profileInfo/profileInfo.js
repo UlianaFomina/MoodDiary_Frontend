@@ -4,7 +4,7 @@ import "./profileInfo.css"
 
 export const ProfileInfo = ({...props}) => {
     return (
-        <div className="profile-content content">
+        <div className="profile-content">
             <div className="profile-info">
                 <div className="profile-info-bg"></div>
                 <div className="profile-info-content">

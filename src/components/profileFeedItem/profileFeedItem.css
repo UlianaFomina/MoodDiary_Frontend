@@ -1,0 +1,20 @@
+.feed-item{
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 5vh;
+}
+.feed-item1{
+    background-image: url("../../assets/page1.png");
+    padding: 2vh 4vw 3vh 2vw;
+}
+.feed-item2{
+    background-image: url("../../assets/page2.png");
+    padding: 2vh 2vw 3vh 4vw;
+}
+.feed-item-date{
+    font-weight: 800;
+    margin-bottom: 1vh;
+}
+.feed-item-text{
+    font-size: 19px;
+}

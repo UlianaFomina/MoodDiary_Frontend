@@ -9,13 +9,15 @@
     justify-content: center;
     animation-duration: 1.5s;
     animation-name: main-greet-content;
+    position: relative;
+    top:-5vh;
 }
 @keyframes main-greet-content {
     from {
-        top: -200vh
+        top: -100vh
     }
     to {
-        top: -105vh;
+        top: -5vh;
     }
 }
 .mood-box{

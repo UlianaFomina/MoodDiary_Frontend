@@ -1,7 +1,13 @@
+.profile{
+    position: relative;
+    background-attachment: fixed;
+    filter: alpha(opacity=70);
+}
 .profile-content{
-    width: 100%;
-    height: fit-content;
+    display: flex;
     padding-top: 2vh;
     justify-content: center;
-    top:-100vh;
+    height: max-content;
+    width: 80%;
+    margin: 0 auto;
 }
