@@ -4,6 +4,17 @@
     display: flex;
     padding-top: 10vh;
     justify-content: space-between;
+    animation-name: profile-feed;
+    animation-duration: 2s;
+    opacity: 1;
+}
+@keyframes profile-feed {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 .profile-feed-column{
     display: flex;

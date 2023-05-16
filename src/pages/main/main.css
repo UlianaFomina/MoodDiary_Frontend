@@ -1,7 +1,7 @@
-.main-greet {
-    background-image: url("../../assets/bg.jpg");
+.main{
+    position: relative;
+    background-attachment: fixed;
 }
-
 .main-greet-content {
     display: flex;
     flex-direction: column;

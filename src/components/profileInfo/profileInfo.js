@@ -8,7 +8,9 @@ export const ProfileInfo = ({...props}) => {
             <div className="profile-info">
                 <div className="profile-info-bg"></div>
                 <div className="profile-info-content">
-                    <img src={avatar} alt="img" className="profile-info-content-avatar"/>
+                    <div className="profile-info-content-avatar">
+                        <img src={avatar} alt="img" className="profile-info-content-avatar"/>
+                    </div>
                     <div className="profile-info-content-desk">
                         <div className="profile-info-content-desk-list">
                             <p className="profile-info-content-desk-item title">Username:</p>

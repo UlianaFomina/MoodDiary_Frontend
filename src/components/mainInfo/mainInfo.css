@@ -1,0 +1,21 @@
+.main-info-item{
+    display: flex;
+    align-items: center;
+}
+.main-info-list-svg{
+    width: 100px;
+}
+.svg1{
+    transform: rotate(170deg);
+}
+.svg2{
+    transform: rotate(10deg) scale(-1, 1);
+}
+.main-info-item-text{
+    background-color: var(--dark-green);
+    color: var(--lite-green);
+    font-size: 20px;
+    padding: 3vh 2vw;
+    border-radius: 10px;
+    margin-left: 1vw;
+}

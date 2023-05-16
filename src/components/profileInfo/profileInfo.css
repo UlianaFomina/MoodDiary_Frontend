@@ -1,6 +1,18 @@
 .profile-info{
-
+    animation-name: profile-info;
+    animation-duration: 2s;
+    position: relative;
+    top: 0;
 }
+@keyframes profile-info{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
 .profile-info-bg{
     border-radius: 10px;
     background-color: var(--dark-green);
@@ -15,11 +27,13 @@
     display: flex;
     align-items: center;
 }
+
 .profile-info-content-avatar{
-    height: 35vh;
-    width: 35vh;
     border-radius: 100%;
     object-fit:cover;
+    height: 35vh;
+    width: 35vh;
+    object-position: center;
 }
 .profile-info-content-desk{
     height:fit-content;

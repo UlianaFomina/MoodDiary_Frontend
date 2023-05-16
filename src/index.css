@@ -131,6 +131,7 @@ button{
 .wrap{
     display: flex;
     flex: auto;
+    flex-direction: column;
 }
 .container-bg{
     width: 100%;
