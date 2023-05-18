@@ -1,9 +1,11 @@
 import React, {useState} from "react";
 import "./login.css"
 import {getErrMess, authenticateApi} from "../../services/auth";
+import {useNavigate} from "react-router-dom";
 
 export const Login = ({...props}) => {
     const [errorMess, setErrorMess] = useState('')
+    let navigate = useNavigate();
 
     function handleSubmitLogin(e) {
         e.preventDefault();
@@ -12,7 +14,11 @@ export const Login = ({...props}) => {
         const formData = new FormData(form);
         authenticateApi(formData, form.method)
             .then(response => {
-                getErrMess(response, setErrorMess)
+                let callResponse = getErrMess(response, setErrorMess);
+                if(!callResponse) {
+                    sessionStorage.setItem("token", response.token);
+                    navigate("/main")
+                }
             })
             .catch(error => (console.log(error)))
     }

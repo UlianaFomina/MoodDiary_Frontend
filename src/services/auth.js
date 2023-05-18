@@ -25,17 +25,14 @@ export const authenticateApi = async (formData, method) => {
     return await response.json();
 }
 export const getErrMess = (response, setFunc) => {
+    let errorResponse;
     if (response !== undefined) {
-        let mess
-        if (response.error !== undefined) {
-            mess = Object.values(response.error).join('')
-            setFunc(mess)
-        } else {
-            mess = Object.values(response.errors[0].message).join('')
-            setFunc(mess)
+        errorResponse = response.error || response.errors;
+        if (errorResponse !== undefined) {
+            setFunc(errorResponse[0].message || errorResponse)
         }
     }
-
+    return errorResponse;
 }
 const demoRequestApi = async () => {
     let response = await fetch("https://mooddiarybackend-production.up.railway.app/api/v1/demo");

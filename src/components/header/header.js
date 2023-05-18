@@ -1,8 +1,14 @@
 import React from "react";
 import "./header.css"
+import {useNavigate} from "react-router-dom";
 import avatar from "../../assets/avatar.jpg"
 
 export const Header = ({...props}) => {
+    const navigate = useNavigate();
+    const logout = () => {
+        navigate("/")
+        sessionStorage.removeItem("token");
+    }
     return (
         <div className={"header"}>
             <div className={"header-high"}>
@@ -72,7 +78,7 @@ export const Header = ({...props}) => {
                 <a href="/profile" className="header-link">
                     <img className="header-link-avatar" src={avatar} alt="avatar"/>
                 </a>
-                <a href="/" className="header-link">
+                <span onClick={logout} className="header-link">
                     <svg viewBox="0 0 24 24" className="header-link-svg header-logout-svg">
                         <path d="M3 13H15V11H3V13Z"/>
                         <path
@@ -82,7 +88,7 @@ export const Header = ({...props}) => {
                             d="M8 4C8 3.44772 8.44772 3 9 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H9C8.44772 21 8 20.5523 8 20V17H10V19H20V5H10V7H8V4Z"
                         />
                     </svg>
-                </a>
+                </span>
             </div>
         </div>
     );

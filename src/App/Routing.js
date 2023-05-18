@@ -5,6 +5,7 @@ import {Main} from "../pages/main/main";
 import {Layout} from "../components/layout/layout";
 import {NewEntry} from "../pages/newEntry/newEntry";
 import {Profile} from "../pages/profile/profile";
+import {RouteGuard} from "../guard/RouteGuard";
 
 
 export const Routing = ({ ...props }) => {
@@ -13,9 +14,9 @@ export const Routing = ({ ...props }) => {
         <Routes location={location}>
             <Route path="/" element={<Layout />}>
                 <Route path="/" element={<Entry />}/>
-                <Route path="/main" element={<Main />} />
-                <Route path="/new-entry" element={<NewEntry/>}/>
-                <Route path="/profile" element={<Profile/>}/>
+                <Route path="/main" element={<RouteGuard element={Main}/>}/>
+                <Route path="/new-entry" element={<RouteGuard element={NewEntry}/>}/>
+                <Route path="/profile" element={<RouteGuard element={Profile}/>}/>
             </Route>
         </Routes>
     );
