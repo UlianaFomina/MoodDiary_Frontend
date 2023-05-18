@@ -2,7 +2,6 @@ import React from "react";
 import "./main.css"
 import {MainInfo} from "../../components/mainInfo/mainInfo";
 
-
 export const Main = ({...props}) => {
     return (<>
         <div className="main container-bg">
@@ -16,9 +15,16 @@ export const Main = ({...props}) => {
                     <div className={" diary-box"}>
                         <h1 className={"main-greet-content-title"}>Diary</h1>
                     </div>
+                    <a href="#main-info" className="main-greet-content-arrow">
+                        <svg className="main-greet-content-arrow-svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 14L12 21M12 21L5 14M12 21L12 3" strokeWidth="2" strokeLinecap="round"
+                                  strokeLinejoin="round"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
-            <MainInfo/>
+            <MainInfo id="main-info"/>
         </div>
     </>)
 };

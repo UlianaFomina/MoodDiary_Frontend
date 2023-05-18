@@ -1,6 +1,6 @@
 .header {
     position: sticky;
-    top:0;
+    top: 0;
     right: 0;
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@
     width: max-content;
     padding: 4vh 0.5%;
     background-color: var(--dark-green);
-    z-index:5;
+    z-index: 5;
 }
 
 .header-high {
@@ -30,8 +30,23 @@
 .header-link-svg {
     fill: var(--lite-green);
     transition: 1s;
+    width: 45px;
+    height: 45px;
 }
-
+.header-logo-svg{
+    width: 85px;
+    height: 55px;
+}
+.header-logout-svg{
+    position: relative;
+    right: 0.3vw;
+}
 .header-link-svg:hover {
     fill: var(--lite-corall);
+}
+.header-link-avatar{
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    object-fit:cover;
 }

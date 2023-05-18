@@ -82,3 +82,44 @@
 .main-greet-content-span {
     display: block;
 }
+.main-greet-content-arrow{
+    position: absolute;
+    top: 75vh;
+    left: 17vw;
+    animation-name: main-greet-arrow;
+    animation-duration: 5s;
+}
+@keyframes main-greet-arrow {
+    0%{
+        top:150vh;
+    }
+    80%{
+        top:150vh;
+    }
+    100%{
+        top: 75vh;
+    }
+
+}
+.main-greet-content-arrow-svg{
+    width: 150px;
+    height: 150px;
+    animation-name: main-greet-arrow-svg;
+    animation-delay: 4.5s;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+}
+@keyframes main-greet-arrow-svg {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.main-greet-content-arrow-svg path{
+    stroke: var(--dark-green);
+}

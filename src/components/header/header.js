@@ -1,14 +1,15 @@
 import React from "react";
 import "./header.css"
+import avatar from "../../assets/avatar.jpg"
 
 export const Header = ({...props}) => {
     return (
         <div className={"header"}>
             <div className={"header-high"}>
                 <a href={"/main"} className={"header-link"}>
-                    <svg width="85px" height="55px" className="header-link-svg"
+                    <svg width="85px" height="55px" className="header-link-svg header-logo-svg"
                          viewBox="0 0 1450 800">
-                        <g transform="translate(0.000000,852.000000) scale(0.100000,-0.100000)" >
+                        <g transform="translate(0.000000,852.000000) scale(0.100000,-0.100000)">
                             <path
                                 d="m7300 8099 c-381 -38 -716 -155 -1023 -359 -358 -237 -628 -552 -804 -935 -110 -241 -193 -589 -193 -814 l0 -91 94 0 94 0 6 68 c33 340 117 639 243 871 240 440 584 749 1032 925 301 119 674 159 1014 110 60 -9 265 -60 337 -84 406 -137 778 -425 1012 -785 196 -301 304 -629 343 -1037 l7 -68 95 0 96 0 -6 123 c-12 245 -93 580 -195 799 -109 235 -272 459 -478 659 -243 236 -483 386 -794 494 -275 96 -641 148 -880 124z"/>
                             <path
@@ -51,13 +52,13 @@ export const Header = ({...props}) => {
                     </svg>
                 </a>
                 <a href={"/new-entry"} className={"header-link"}>
-                    <svg className="header-link-svg" viewBox="0 0 128 128" width="45px" height="45px">
+                    <svg className="header-link-svg" viewBox="0 0 128 128">
                         <path
                             d="M 64 6.0507812 C 49.15 6.0507812 34.3 11.7 23 23 C 0.4 45.6 0.4 82.4 23 105 C 34.3 116.3 49.2 122 64 122 C 78.8 122 93.7 116.3 105 105 C 127.6 82.4 127.6 45.6 105 23 C 93.7 11.7 78.85 6.0507812 64 6.0507812 z M 64 12 C 77.3 12 90.600781 17.099219 100.80078 27.199219 C 121.00078 47.499219 121.00078 80.500781 100.80078 100.80078 C 80.500781 121.10078 47.500781 121.10078 27.300781 100.80078 C 7.0007813 80.500781 6.9992188 47.499219 27.199219 27.199219 C 37.399219 17.099219 50.7 12 64 12 z M 64 42 C 62.3 42 61 43.3 61 45 L 61 61 L 45 61 C 43.3 61 42 62.3 42 64 C 42 65.7 43.3 67 45 67 L 61 67 L 61 83 C 61 84.7 62.3 86 64 86 C 65.7 86 67 84.7 67 83 L 67 67 L 83 67 C 84.7 67 86 65.7 86 64 C 86 62.3 84.7 61 83 61 L 67 61 L 67 45 C 67 43.3 65.7 42 64 42 z"/>
                     </svg>
                 </a>
                 <a href={"/statistics"} className={"header-link"}>
-                    <svg className="header-link-svg" width="45px" height="45px" viewBox="100 100 210 210">
+                    <svg className="header-link-svg"  viewBox="100 100 210 210">
                         <g transform="matrix(12.5 0 0 12.5 200 200)">
                             <path
                                 transform=" translate(-8, -8)"
@@ -67,11 +68,19 @@ export const Header = ({...props}) => {
                     </svg>
                 </a>
             </div>
-            <div className={"header-low"}>
-                <a href={"/profile"} className={"header-link"}>
-                    <svg className="header-link-svg" viewBox="0 0 128 128" width="45px" height="45px">
+            <div className={"header-high"}>
+                <a href="/profile" className="header-link">
+                    <img className="header-link-avatar" src={avatar} alt="avatar"/>
+                </a>
+                <a href="/" className="header-link">
+                    <svg viewBox="0 0 24 24" className="header-link-svg header-logout-svg">
+                        <path d="M3 13H15V11H3V13Z"/>
                         <path
-                            d="M 64 6.0507812 C 49.15 6.0507812 34.3 11.7 23 23 C 0.4 45.6 0.4 82.4 23 105 C 34.3 116.3 49.2 122 64 122 C 78.8 122 93.7 116.3 105 105 C 127.6 82.4 127.6 45.6 105 23 C 93.7 11.7 78.85 6.0507812 64 6.0507812 z M 64 12 C 77.3 12 90.600781 17.099219 100.80078 27.199219 C 121.00078 47.499219 121.00078 80.500781 100.80078 100.80078 C 80.500781 121.10078 47.500781 121.10078 27.300781 100.80078 C 7.0007813 80.500781 6.9992188 47.499219 27.199219 27.199219 C 37.399219 17.099219 50.7 12 64 12 z M 64 42 C 62.3 42 61 43.3 61 45 L 61 61 L 45 61 C 43.3 61 42 62.3 42 64 C 42 65.7 43.3 67 45 67 L 61 67 L 61 83 C 61 84.7 62.3 86 64 86 C 65.7 86 67 84.7 67 83 L 67 67 L 83 67 C 84.7 67 86 65.7 86 64 C 86 62.3 84.7 61 83 61 L 67 61 L 67 45 C 67 43.3 65.7 42 64 42 z"/>
+                            d="M5.79282 7.79291L2.29282 11.2929C1.90229 11.6834 1.90229 12.3166 2.29282 12.7071L5.79282 16.2071L7.20703 14.7929L4.41414 12L7.20703 9.20712L5.79282 7.79291Z"
+                        />
+                        <path
+                            d="M8 4C8 3.44772 8.44772 3 9 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H9C8.44772 21 8 20.5523 8 20V17H10V19H20V5H10V7H8V4Z"
+                        />
                     </svg>
                 </a>
             </div>
