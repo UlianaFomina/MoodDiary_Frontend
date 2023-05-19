@@ -2,14 +2,15 @@ import React from "react";
 import "./profileFeedItem.css"
 
 
-export const ProfileFeedItem = ({...props}) => {
+export const ProfileFeedItem = ({story, column}) => {
+    console.log(column)
     return (
-        <div className={props.column === 1? "feed-item feed-item1" : "feed-item feed-item2"}>
+        <div className={column === 1 ? "feed-item feed-item1" : "feed-item feed-item2"}>
             <p className="feed-item-text feed-item-date">
-                28.09.10
+                {story.createdAt}
             </p>
             <p className="feed-item-text">
-                {props.text}
+                {story.content}
             </p>
         </div>
     )

@@ -1,8 +1,22 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import avatar from "../../assets/avatar.jpg"
 import "./profileInfo.css"
+import {getById} from "../../service/user";
 
 export const ProfileInfo = ({...props}) => {
+    const [user, setUser] = useState(null)
+    const userId = sessionStorage.getItem("id")
+
+    useEffect(() => {
+        const dataFetch = async () => {
+            const user = await getById(userId)
+            setUser(user)
+        }
+
+        dataFetch();
+    }, []);
+
+
     return (
         <div className="profile-content">
             <div className="profile-info">
@@ -23,12 +37,10 @@ export const ProfileInfo = ({...props}) => {
 
                         </div>
                         <div className="profile-info-content-desk-list">
-                            <p className="profile-info-content-desk-item desk"> user123456</p>
-                            <p className="profile-info-content-desk-item desk"> user123@gmail.com</p>
-                            <p className="profile-info-content-desk-item desk">17.02.2003</p>
-                            <p className="profile-info-content-desk-item desk"> Reading practice to help you
-                                understand texts with a wide vocabulary where you may need to consider the writer's
-                                opinion. Texts include articles, reports, messages, short stories and reviews.</p>
+                            <p className="profile-info-content-desk-item desk">{user ? user.username : ""}</p>
+                            <p className="profile-info-content-desk-item desk">{user ? user.email : ""}</p>
+                            <p className="profile-info-content-desk-item desk">{user ? user.dateOfBirth : ""}</p>
+                            <p className="profile-info-content-desk-item desk"> {user ? user.about : ""}</p>
                         </div>
                     </div>
                 </div>

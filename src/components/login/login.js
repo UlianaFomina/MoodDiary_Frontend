@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import "./login.css"
-import {getErrMess, authenticateApi} from "../../services/auth";
+import {getErrMess, authenticateApi} from "../../service/auth";
 import {useNavigate} from "react-router-dom";
+import {extract} from "../../service/jwt";
 
 export const Login = ({...props}) => {
     const [errorMess, setErrorMess] = useState('')
@@ -16,7 +17,11 @@ export const Login = ({...props}) => {
             .then(response => {
                 let callResponse = getErrMess(response, setErrorMess);
                 if(!callResponse) {
+                    let {id, sub} = extract(response.token);
                     sessionStorage.setItem("token", response.token);
+                    sessionStorage.setItem("id", id);
+                    sessionStorage.setItem("username", sub);
+
                     navigate("/main")
                 }
             })

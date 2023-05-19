@@ -1,6 +1,6 @@
 import React from "react";
 import {Navigate} from "react-router-dom";
-import {extract} from "../services/jwt";
+import {extract} from "../service/jwt";
 
 const isTokenValid = (expiredAt) => {
     let now = Math.floor(Date.now() / 1000) + 5000;

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import "./registration.css"
-import {registrationApi, getErrMess} from "../../services/auth";
+import {registrationApi, getErrMess} from "../../service/auth";
 
 export const Registration = ({...props}) => {
     const [pass, setPass] = useState('');
