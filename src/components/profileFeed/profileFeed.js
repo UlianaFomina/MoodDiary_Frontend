@@ -15,14 +15,22 @@ export const ProfileFeed = ({stories}) => {
         }
     }
 
+    const renderColumns = (stories) => {
+        let columnData = [];
+        for(let i = 1; i <= 2; i++) {
+            columnData.push(
+                <div className="profile-feed-column">
+                    {viewStories(stories, i)}
+                </div>
+            )
+        }
+
+        return columnData
+    }
+
     return (
         <div className="profile-feed content">
-            <div className="profile-feed-column">
-                {viewStories(stories, 1)}
-            </div>
-            <div className="profile-feed-column">
-                {viewStories(stories, 2)}
-            </div>
+            {renderColumns(stories)}
         </div>
     )
 };
