@@ -4,9 +4,10 @@ import {authenticateApi, getErrMess} from "../../service/auth";
 import {useNavigate} from "react-router-dom";
 import {extract} from "../../service/jwt";
 import {Loader} from "../loader/loader";
+import {ErrorMessage} from "../error-message/error-message";
 
 export const Login = ({...props}) => {
-    const [errorMess, setErrorMess] = useState('')
+    const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     let navigate = useNavigate();
 
@@ -14,7 +15,7 @@ export const Login = ({...props}) => {
         e.preventDefault();
 
         setLoading(true)
-        setErrorMess("")
+        setError("")
 
         const form = e.target;
         const formData = new FormData(form);
@@ -30,7 +31,7 @@ export const Login = ({...props}) => {
             navigate("/main")
         }).catch(err => {
             setLoading(false)
-            getErrMess(err.response.data, setErrorMess);
+            getErrMess(err.response.data, setError);
         });
     }
 
@@ -49,13 +50,7 @@ export const Login = ({...props}) => {
                 <button onClick={props.setEntryState} className="entry-box-link">You don't have an account?</button>
             </div>
             <Loader loading={loading}/>
-            {errorMess ? (
-                <div className="entry-message">
-                    <h3>{errorMess}</h3>
-                </div>
-            ) : null
-            }
+            {error ? (<ErrorMessage error={error}/>) : null}
         </>
-
     );
 };
