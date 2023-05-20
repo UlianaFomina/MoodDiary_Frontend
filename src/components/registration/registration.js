@@ -3,6 +3,7 @@ import "./registration.css"
 import {registrationApi} from "../../service/auth";
 import {useNavigate} from "react-router-dom";
 import {handleException} from "../../service/exception";
+import {ErrorMessage} from "../error-message/error-message";
 
 export const Registration = ({...props}) => {
     const [pass, setPass] = useState('');
@@ -63,12 +64,7 @@ export const Registration = ({...props}) => {
                     <h3>Entered passwords do not match</h3>
                 </div>
             )}
-            {errorMess ? (
-                <div className="entry-message">
-                    <h3>{errorMess}</h3>
-                </div>
-            ) : null
-            }
+            {errorMess ? (<ErrorMessage error={errorMess}/>) : null}
         </>
     );
 };

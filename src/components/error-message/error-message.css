@@ -1,9 +1,11 @@
 .error-message {
+    display: flex;
     opacity: 0;
     position: absolute;
     top: 5vh;
     left: 5vw;
     padding: 3%;
+    width: 350px;
     border-radius: 10px;
     background-color: var(--lite-corall);
     animation-name: error-message;
