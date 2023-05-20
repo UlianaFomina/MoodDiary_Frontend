@@ -1,28 +1,18 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import "./profileFeed.css"
 import {ProfileFeedItem} from "../profileFeedItem/profileFeedItem";
-import {getPostsByUserId} from "../../service/story";
 
 
-export const ProfileFeed = ({...props}) => {
-    const [stories, setStories] = useState([])
-    const userId = sessionStorage.getItem("id");
-
-    useEffect(() => {
-        const storiesFetch = async () => {
-            const stories = await getPostsByUserId(userId)
-            setStories(stories)
-        }
-
-        storiesFetch();
-    }, [])
+export const ProfileFeed = ({stories}) => {
 
     const viewStories = (stories, column) => {
-        return stories.filter((story, index) => index % 2 === column - 1).map((story, index) => {
-            return (
-                <ProfileFeedItem story={story} column={column} key={story}/>
-            )
-        });
+        if(stories != null) {
+            return stories.filter((story, index) => index % 2 === column - 1).map((story) => {
+                return (
+                    <ProfileFeedItem story={story} column={column} key={story}/>
+                )
+            });
+        }
     }
 
     return (

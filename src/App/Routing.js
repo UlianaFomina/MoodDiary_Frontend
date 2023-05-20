@@ -1,5 +1,5 @@
 import React from "react";
-import {Routes, Route, useLocation} from "react-router-dom";
+import {Route, Routes, useLocation} from "react-router-dom";
 import {Entry} from "../pages/entry/entry";
 import {Main} from "../pages/main/main";
 import {Layout} from "../components/layout/layout";
@@ -9,7 +9,7 @@ import {RouteGuard} from "../guard/RouteGuard";
 import {ConfirmEmailInformation} from "../pages/confirm-email-info/confirm-email-information";
 
 
-export const Routing = ({ ...props }) => {
+export const Routing = () => {
     const location = useLocation();
     return (
         <Routes location={location}>

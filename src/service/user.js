@@ -7,6 +7,7 @@ export const getById = async (id) => {
         username: response.data.username,
         email: response.data.email,
         dateOfBirth: response.data.dateOfBirth,
-        about: response.data.about
+        about: response.data.about,
+        stories: response.data.stories
     };
 }

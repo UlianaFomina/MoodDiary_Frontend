@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import "./registration.css"
-import {registrationApi, getErrMess} from "../../service/auth";
+import {getErrMess, registrationApi} from "../../service/auth";
 import {useNavigate} from "react-router-dom";
 
 export const Registration = ({...props}) => {
@@ -18,7 +18,7 @@ export const Registration = ({...props}) => {
             const form = e.target;
             const formData = new FormData(form);
 
-            registrationApi(formData).then(response => {
+            registrationApi(formData).then(() => {
                 navigate("/confirm-email")
                 localStorage.setItem("email", formData.get("email").name)
             }).catch(err => {
@@ -41,14 +41,14 @@ export const Registration = ({...props}) => {
                     <input type="password" placeholder="password"
                            value={pass} onChange={e => {
                         setPass(e.target.value);
-                        setIsEquals((true))
+                        setIsEquals(true)
                     }}
                            minLength='6' maxLength='12' className="entry-box-form-input" required/>
 
                     <input type="password" name="password" placeholder="repeat password"
                            value={passControl} onChange={e => {
                         setPassControl(e.target.value);
-                        setIsEquals((true))
+                        setIsEquals(true)
                     }}
                            minLength='6' maxLength='12' className="entry-box-form-input" required/>
 

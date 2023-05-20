@@ -1,26 +1,12 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import avatar from "../../assets/avatar.jpg"
 import "./profileInfo.css"
-import {getById} from "../../service/user";
 
-export const ProfileInfo = ({...props}) => {
-    const [user, setUser] = useState(null)
-    const userId = sessionStorage.getItem("id")
-
-    useEffect(() => {
-        const dataFetch = async () => {
-            const user = await getById(userId)
-            setUser(user)
-        }
-
-        dataFetch();
-    }, []);
-
-
+export const ProfileInfo = ({user}) => {
     return (
         <div className="profile-content">
             <div className="profile-info">
-                <div className="profile-info-bg"></div>
+                <div className="profile-info-bg">{}</div>
                 <div className="profile-info-content">
                     <div className="profile-info-content-avatar">
                         <img src={avatar} alt="img" className="profile-info-content-avatar"/>
