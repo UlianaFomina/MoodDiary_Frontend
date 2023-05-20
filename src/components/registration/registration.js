@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import "./registration.css"
-import {getErrMess, registrationApi} from "../../service/auth";
+import {registrationApi} from "../../service/auth";
 import {useNavigate} from "react-router-dom";
+import {handleException} from "../../service/exception";
 
 export const Registration = ({...props}) => {
     const [pass, setPass] = useState('');
@@ -22,7 +23,7 @@ export const Registration = ({...props}) => {
                 navigate("/confirm-email")
                 localStorage.setItem("email", formData.get("email").name)
             }).catch(err => {
-                getErrMess(err.response.data,setErrorMess)
+                handleException(err.response.data,setErrorMess)
             })
         } else setIsEquals(false)
     }

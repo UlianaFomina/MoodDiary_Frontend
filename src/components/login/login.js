@@ -1,10 +1,11 @@
 import React, {useState} from "react";
 import "./login.css"
-import {authenticateApi, getErrMess} from "../../service/auth";
+import {authenticateApi} from "../../service/auth";
 import {useNavigate} from "react-router-dom";
 import {extract} from "../../service/jwt";
 import {Loader} from "../loader/loader";
 import {ErrorMessage} from "../error-message/error-message";
+import {handleException} from "../../service/exception";
 
 export const Login = ({...props}) => {
     const [error, setError] = useState('')
@@ -31,7 +32,7 @@ export const Login = ({...props}) => {
             navigate("/main")
         }).catch(err => {
             setLoading(false)
-            getErrMess(err.response.data, setError);
+            handleException(err.response.data, setError);
         });
     }
 
