@@ -7,7 +7,8 @@ const override = {
     left: "0",
     right: "0",
     bottom: "0",
-    margin: "auto"
+    margin: "auto",
+    zIndex: "100"
 };
 
 export const Loader = ({loading}) => {
