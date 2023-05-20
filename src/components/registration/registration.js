@@ -1,12 +1,14 @@
 import React, {useState} from "react";
 import "./registration.css"
 import {registrationApi, getErrMess} from "../../service/auth";
+import {useNavigate} from "react-router-dom";
 
 export const Registration = ({...props}) => {
     const [pass, setPass] = useState('');
     const [passControl, setPassControl] = useState('');
     const [isEquals, setIsEquals] = useState(true)
     const [errorMess, setErrorMess] = useState('')
+    const navigate = useNavigate();
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -16,12 +18,12 @@ export const Registration = ({...props}) => {
             const form = e.target;
             const formData = new FormData(form);
 
-            registrationApi(formData, form.method)
-                .then(response => {
-                   getErrMess(response,setErrorMess)
-
-                })
-                .catch(error => (console.log(error)))
+            registrationApi(formData).then(response => {
+                navigate("/confirm-email")
+                localStorage.setItem("email", formData.get("email").name)
+            }).catch(err => {
+                getErrMess(err.response.data,setErrorMess)
+            })
         } else setIsEquals(false)
     }
 

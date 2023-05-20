@@ -1,5 +1,7 @@
 import axios from "axios";
 
+//FOR PRODUCTION BACKEND ------> https://mooddiarybackend-production.up.railway.app
+
 export const API_URL = 'http://localhost:8080'
 
 const api = axios.create({
@@ -13,7 +15,7 @@ api.interceptors.request.use((config) => {
         config.headers.Authorization = `Bearer ${token}`
         return config
     }
-    return null;
+    return config;
 })
 
 export default api;

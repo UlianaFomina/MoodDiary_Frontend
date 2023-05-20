@@ -1,28 +1,25 @@
-export const registrationApi = async (formData, method) => {
+import api from "./api";
+
+export const registrationApi = async (formData) => {
     formData.set('imageUrl', '');
     const formJson = Object.fromEntries(formData.entries());
-    let response = await fetch("https://mooddiarybackend-production.up.railway.app/api/v1/auth/registration", {
-        method: method,
-        body: JSON.stringify(formJson),
+    const response = await api.post("/api/v1/auth/registration", JSON.stringify(formJson), {
         headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json'
         }
-    });
+    })
 
-    return await response.json();
+    return await response.data;
 }
-export const authenticateApi = async (formData, method) => {
+export const authenticateApi = async (formData) => {
     const formJson = Object.fromEntries(formData.entries());
-    console.log(formJson)
-    let response = await fetch("https://mooddiarybackend-production.up.railway.app/api/v1/auth/authenticate", {
-        method: method,
-        body: JSON.stringify(formJson),
+    const response = await api.post("/api/v1/auth/authenticate", JSON.stringify(formJson), {
         headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json'
         }
-    });
+    })
 
-    return await response.json();
+    return await response.data;
 }
 export const getErrMess = (response, setFunc) => {
     let errorResponse;
@@ -34,10 +31,3 @@ export const getErrMess = (response, setFunc) => {
     }
     return errorResponse;
 }
-const demoRequestApi = async () => {
-    let response = await fetch("https://mooddiarybackend-production.up.railway.app/api/v1/demo");
-
-    return await response.json();
-}
-
-export {demoRequestApi};

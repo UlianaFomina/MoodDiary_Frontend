@@ -13,19 +13,18 @@ export const Login = ({...props}) => {
         setErrorMess("")
         const form = e.target;
         const formData = new FormData(form);
-        authenticateApi(formData, form.method)
-            .then(response => {
-                let callResponse = getErrMess(response, setErrorMess);
-                if(!callResponse) {
-                    let {id, sub} = extract(response.token);
-                    sessionStorage.setItem("token", response.token);
-                    sessionStorage.setItem("id", id);
-                    sessionStorage.setItem("username", sub);
 
-                    navigate("/main")
-                }
-            })
-            .catch(error => (console.log(error)))
+        authenticateApi(formData).then(response => {
+            let token = extract(response.token);
+            let {id, sub} = token;
+            sessionStorage.setItem("token", response.token);
+            sessionStorage.setItem("id", id);
+            sessionStorage.setItem("username", sub);
+
+            navigate("/main")
+        }).catch(err => {
+            getErrMess(err.response.data, setErrorMess);
+        });
     }
 
     return (
@@ -33,7 +32,8 @@ export const Login = ({...props}) => {
             <div className={props.isNowLogin ? "entry-box login-box-open " : "entry-box login-box-close"}>
                 <h1 className="entry-box-title">Login</h1>
                 <form method="POST" onSubmit={handleSubmitLogin} className="entry-box-form">
-                    <input name="username" type="text" placeholder="email" className="entry-box-form-input" required/>
+                    <input name="username" type="text" placeholder="username" className="entry-box-form-input"
+                           required/>
                     <input name="password" minLength='6' maxLength='12' type="password" placeholder="password"
                            className="entry-box-form-input" required/>
                     <button type="submit" className="entry-box-form-input">Submit</button>
