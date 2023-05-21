@@ -7,6 +7,7 @@ import {NewEntry} from "../pages/newEntry/newEntry";
 import {Profile} from "../pages/profile/profile";
 import {RouteGuard} from "../guard/RouteGuard";
 import {ConfirmEmailInformation} from "../pages/confirm-email-info/confirm-email-information";
+import {Verification} from "../pages/verification/verification";
 
 
 export const Routing = () => {
@@ -19,6 +20,7 @@ export const Routing = () => {
                 <Route path="/main" element={<RouteGuard element={Main}/>}/>
                 <Route path="/new-entry" element={<RouteGuard element={NewEntry}/>}/>
                 <Route path="/profile" element={<RouteGuard element={Profile}/>}/>
+                <Route path="/verification" element={<Verification/>}/>
             </Route>
         </Routes>
     );

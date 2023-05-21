@@ -6,7 +6,7 @@ export const Layout = ({...props}) => {
     const location = useLocation();
     return (
         <>
-            {location.pathname === "/" ? (<Outlet/>) :
+            {location.pathname === "/" || location.pathname === "/verification"  ? (<Outlet/>) :
                 (<div className={"layout"}>
                     <Header/>
                     <Outlet/>
