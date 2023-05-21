@@ -1,0 +1,12 @@
+.button {
+    background-color: #ccc;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.selected {
+    background-color: red;
+}
