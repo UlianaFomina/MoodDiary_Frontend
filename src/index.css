@@ -86,7 +86,7 @@ input[type=file]::file-selector-button{
     color: var(--dark-green);
     border-radius: 5px;
 }
-input:focus, input:hover,button:focus, button:hover, textarea:focus, textarea:hover, a:focus, a:hover{
+input:focus, input:hover, button:hover, textarea:focus, textarea:hover, a:focus, a:hover{
     opacity: 70%;
     cursor: pointer;
     outline: none;

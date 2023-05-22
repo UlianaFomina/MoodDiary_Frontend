@@ -13,7 +13,7 @@ export const Graph = ({graph}) => {
             <YAxis/>
             <Tooltip labelFormatter={time => new Date(time).toLocaleString()}/>
             <Legend/>
-            <Line type="monotone" strokeWidth={3} dataKey="satisfactionRate" stroke="#8884d8"/>
+            <Line type="monotone" strokeWidth={4} dataKey="satisfactionRate" stroke="#a0c1b8"/>
         </LineChart>
     )
 }

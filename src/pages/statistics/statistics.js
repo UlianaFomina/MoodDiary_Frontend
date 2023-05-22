@@ -27,8 +27,10 @@ export const Statistics = () => {
             <div className="stat container-bg">
                 <div className="bg">{}</div>
                 <div className="stat-content content">
-                    <ButtonBlock selectedButton={lastDays} click={handleButtonClick}/>
-                    <Graph graph={graph ? graph : []}/>
+                    <div className="stat-graph">
+                        <ButtonBlock selectedButton={lastDays} click={handleButtonClick}/>
+                        <Graph graph={graph ? graph : []}/>
+                    </div>
                 </div>
             </div>
         </>)
@@ -36,24 +38,25 @@ export const Statistics = () => {
 
 const ButtonBlock = ({selectedButton, click}) => {
     return (
-        <div>
+        <div className="stat-btn-wrap">
+            <p className="stat-btn-text">Select the number of days for which you want to see the statistics:</p>
             <button
-                className={`button ${selectedButton === 2 ? 'selected' : ''}`}
-                onClick={() => click(2)}
-            >
-                2
-            </button>
-            <button
-                className={`button ${selectedButton === 3 ? 'selected' : ''}`}
+                className={`stat-button ${selectedButton === 3 ? 'stat-button-selected' : ''}`}
                 onClick={() => click(3)}
             >
                 3
             </button>
             <button
-                className={`button ${selectedButton === 5 ? 'selected' : ''}`}
+                className={`stat-button ${selectedButton === 5 ? 'stat-button-selected' : ''}`}
                 onClick={() => click(5)}
             >
                 5
+            </button>
+            <button
+                className={`stat-button ${selectedButton === 7 ? 'stat-button-selected' : ''}`}
+                onClick={() => click(7)}
+            >
+                7
             </button>
         </div>
     );
