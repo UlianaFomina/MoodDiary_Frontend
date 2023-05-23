@@ -1,14 +1,34 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./header.css"
 import {useNavigate} from "react-router-dom";
 import avatar from "../../assets/avatar.jpg"
+import {getById} from "../../service/user";
 
-export const Header = ({...props}) => {
+export const Header = () => {
     const navigate = useNavigate();
+    const [imageUrl, setImageUrl] = useState(avatar);
     const logout = () => {
         navigate("/")
         sessionStorage.removeItem("token");
     }
+    let id = sessionStorage.getItem("id");
+    console.log(id)
+
+    const fetchUserImage = async () => {
+        getById(id)
+            .then((response) => {
+                setImageUrl(response.imageUrl)
+            })
+            .catch(() => {
+                setImageUrl(avatar)
+            })
+    }
+
+    useEffect(() => {
+        fetchUserImage()
+    }, [imageUrl])
+
+
     return (
         <div className={"header"}>
             <div className={"header-high"}>
@@ -64,7 +84,7 @@ export const Header = ({...props}) => {
                     </svg>
                 </a>
                 <a href={"/statistics"} className={"header-link"}>
-                    <svg className="header-link-svg"  viewBox="100 100 210 210">
+                    <svg className="header-link-svg" viewBox="100 100 210 210">
                         <g transform="matrix(12.5 0 0 12.5 200 200)">
                             <path
                                 transform=" translate(-8, -8)"
@@ -76,7 +96,7 @@ export const Header = ({...props}) => {
             </div>
             <div className={"header-high"}>
                 <a href="/profile" className="header-link">
-                    <img className="header-link-avatar" src={avatar} alt="avatar"/>
+                    <img className="header-link-avatar" src={imageUrl} alt="avatar"/>
                 </a>
                 <span onClick={logout} className="header-link">
                     <svg viewBox="0 0 24 24" className="header-link-svg header-logout-svg">

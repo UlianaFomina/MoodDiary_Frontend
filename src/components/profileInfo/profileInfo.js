@@ -9,7 +9,7 @@ export const ProfileInfo = ({user}) => {
                 <div className="profile-info-bg">{}</div>
                 <div className="profile-info-content">
                     <div className="profile-info-content-avatar">
-                        <img src={avatar} alt="img" className="profile-info-content-avatar"/>
+                        <img src={user ? user.imageUrl : avatar} alt="img" className="profile-info-content-avatar"/>
                     </div>
                     <div className="profile-info-content-desk">
                         <div className="profile-info-content-desk-list">

@@ -2,16 +2,25 @@ import React, {useEffect, useState} from "react";
 import "./statistics.css"
 import {Graph} from "../../components/graph/graph";
 import {getLastDays} from "../../service/statistics";
+import {Loader} from "../../components/loader/loader";
 
 export const Statistics = () => {
     const [graph, setGraph] = useState(null);
-    const [lastDays, setLastDays] = useState(2);
+    const [lastDays, setLastDays] = useState(3);
+    const [loading, setLoading] = useState(false);
 
     const userId = sessionStorage.getItem("id");
 
     const fetchGraph = async (lastDays) => {
-        const graphResponse = await getLastDays(userId, lastDays);
-        setGraph(graphResponse)
+        setLoading(true)
+        getLastDays(userId, lastDays)
+            .then(response => {
+                setGraph(response)
+                setLoading(false)
+            })
+            .catch(() => {
+                setLoading(false)
+            });
     }
 
     const handleButtonClick = (value) => {
@@ -28,8 +37,10 @@ export const Statistics = () => {
                 <div className="bg">{}</div>
                 <div className="stat-content content">
                     <div className="stat-graph">
+                        {graph ? graph.moodPhrase : null}
                         <ButtonBlock selectedButton={lastDays} click={handleButtonClick}/>
-                        <Graph graph={graph ? graph : []}/>
+                        <Graph graph={graph ? graph.statistics : []}/>
+                        <Loader loading={loading}/>
                     </div>
                 </div>
             </div>

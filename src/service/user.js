@@ -8,6 +8,15 @@ export const getById = async (id) => {
         email: response.data.email,
         dateOfBirth: response.data.dateOfBirth,
         about: response.data.about,
-        stories: response.data.stories
+        stories: response.data.stories,
+        imageUrl: response.data.imageUrl
     };
+}
+
+export const attachAvatar = async (id, file) => {
+    let formData = new FormData();
+    formData.append('avatar', file);
+    formData.append('id', id);
+
+    return await api.post('/api/v1/user/avatar', formData);
 }
