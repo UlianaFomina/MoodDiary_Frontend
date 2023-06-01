@@ -15,7 +15,7 @@ export const Profile = () => {
 
     useEffect(() => {
         userAndStoriesFetch();
-    });
+    }, []);
 
     return (
         <div className="profile container-bg">

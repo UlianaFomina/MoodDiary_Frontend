@@ -3,7 +3,7 @@ import {Navigate} from "react-router-dom";
 import {extract} from "../service/jwt";
 
 const isTokenValid = (expiredAt) => {
-    let now = Math.floor(Date.now() / 1000) + 5000;
+    let now = Math.floor(Date.now());
 
     return expiredAt && expiredAt < now;
 }

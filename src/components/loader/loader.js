@@ -1,4 +1,4 @@
-import {ClockLoader} from "react-spinners";
+import {ClipLoader} from "react-spinners";
 import React from "react";
 
 const override = {
@@ -13,12 +13,12 @@ const override = {
 
 export const Loader = ({loading}) => {
     return (
-        <ClockLoader
-            loading={loading}
-            cssOverride={override}
-            size={150}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-        />
+            <ClipLoader
+                loading={loading}
+                cssOverride={override}
+                size={80}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+            />
     )
 }

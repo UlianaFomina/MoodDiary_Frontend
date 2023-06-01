@@ -47,7 +47,6 @@ export const Login = ({...props}) => {
                            className="entry-box-form-input" required/>
                     <button disabled={loading} type="submit" className="entry-box-form-input">Submit</button>
                 </form>
-                <a href="/" className="entry-box-link">Forgot your password?</a>
                 <button onClick={props.setEntryState} className="entry-box-link">You don't have an account?</button>
             </div>
             <Loader loading={loading}/>

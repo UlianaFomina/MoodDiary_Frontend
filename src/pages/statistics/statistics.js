@@ -37,7 +37,7 @@ export const Statistics = () => {
                 <div className="bg">{}</div>
                 <div className="stat-content content">
                     <div className="stat-graph">
-                        {graph ? graph.moodPhrase : null}
+                        <p className="stat-text">{graph ? graph.moodPhrase : null}</p>
                         <ButtonBlock selectedButton={lastDays} click={handleButtonClick}/>
                         <Graph graph={graph ? graph.statistics : []}/>
                         <Loader loading={loading}/>

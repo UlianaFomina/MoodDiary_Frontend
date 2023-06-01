@@ -12,21 +12,19 @@ export const Header = () => {
         sessionStorage.removeItem("token");
     }
     let id = sessionStorage.getItem("id");
-    console.log(id)
 
-    const fetchUserImage = async () => {
+    const fetchUserImage =  () => {
         getById(id)
-            .then((response) => {
-                setImageUrl(response.imageUrl)
+            .then(resp => {
+                setImageUrl(resp.imageUrl)
             })
-            .catch(() => {
-                setImageUrl(avatar)
-            })
+            .catch(e => console.log(e));
+
     }
 
     useEffect(() => {
         fetchUserImage()
-    }, [imageUrl])
+    })
 
 
     return (
@@ -96,7 +94,7 @@ export const Header = () => {
             </div>
             <div className={"header-high"}>
                 <a href="/profile" className="header-link">
-                    <img className="header-link-avatar" src={imageUrl} alt="avatar"/>
+                    <img className="header-link-avatar" onError={e => e.target.src=avatar} src={imageUrl ? imageUrl : avatar} alt="avatar"/>
                 </a>
                 <span onClick={logout} className="header-link">
                     <svg viewBox="0 0 24 24" className="header-link-svg header-logout-svg">

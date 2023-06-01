@@ -13,6 +13,7 @@ export const Registration = ({...props}) => {
     const [isEquals, setIsEquals] = useState(true)
     const [errorMess, setErrorMess] = useState('')
     const [file, setFile] = useState('');
+    const [email, setEmail] = useState('')
     const navigate = useNavigate();
 
     function onChangeFile(e){
@@ -29,15 +30,14 @@ export const Registration = ({...props}) => {
             const formData = new FormData(form);
 
             registrationApi(formData).then((response) => {
-                localStorage.setItem("email", formData.get("email").name)
+                sessionStorage.setItem("email", email)
 
                 if(file) {
                     let {id} = extract(response.token);
                     attachAvatar(id, file)
-                        .then(() => navigate("/confirm-email"))
-                        .catch(() => localStorage.removeItem("email"));
+                        .catch(() => sessionStorage.removeItem("email"));
                 }
-                navigate("/confirm-email")
+                navigate("/verification")
             }).catch(err => {
                 handleException(err.response.data,setErrorMess)
             })
@@ -49,7 +49,15 @@ export const Registration = ({...props}) => {
             <div className={props.isNowLogin ? "entry-box reg-box-close" : " entry-box reg-box-open"}>
                 <h1 className="entry-box-title">Registration</h1>
                 <form method="POST" onSubmit={handleSubmit} className="entry-box-form">
-                    <input type="email" placeholder="email" name="email" className="entry-box-form-input" required/>
+                    <input
+                        type="email"
+                        placeholder="email"
+                        name="email"
+                        className="entry-box-form-input"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        required
+                    />
                     <input type="text" placeholder="username" name="username" className="entry-box-form-input"
                            minLength='4' maxLength='12' required/>
                     <textarea maxLength="200" className="entry-box-form-input" name="about" placeholder="about"/>

@@ -7,7 +7,7 @@ export const ProfileFeed = ({stories}) => {
 
     const viewStories = (stories, column) => {
         if(stories != null) {
-            return stories.filter((story, index) => index % 2 === column - 1).map((story) => {
+            return stories.filter((story, index) => index % 2 === column - 1).reverse().map((story) => {
                 return (
                     <ProfileFeedItem story={story} column={column} key={story}/>
                 )
