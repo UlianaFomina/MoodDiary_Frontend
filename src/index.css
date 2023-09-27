@@ -1,169 +1,189 @@
-@import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@400;600&family=Outfit:wght@400;600;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@400;600&family=Outfit:wght@400;600;800&display=swap");
 
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 * {
-    scrollbar-width: thin;
-    scrollbar-color: #fbfbfb #2e3030;
+  scrollbar-width: thin;
+  scrollbar-color: #fbfbfb #2e3030;
 }
 
 /* Chrome, Edge and Safari */
 *::-webkit-scrollbar {
-    width: 3px;
-    width: 3px;
+  width: 3px;
+  width: 3px;
 }
 
 *::-webkit-scrollbar-track {
-    border-radius: 2px;
-    background-color: #2e3030;
+  border-radius: 2px;
+  background-color: #2e3030;
 }
 
 *::-webkit-scrollbar-track:hover {
-    background-color: #565a5b;
+  background-color: #565a5b;
 }
 
 *::-webkit-scrollbar-track:active {
-    background-color: #999fa1;
+  background-color: #999fa1;
 }
 
 *::-webkit-scrollbar-thumb {
-    border-radius: 0px;
-    background-color: #fbfbfb;
+  border-radius: 0px;
+  background-color: #fbfbfb;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-    background-color: #c2c2c2;
+  background-color: #c2c2c2;
 }
 
 *::-webkit-scrollbar-thumb:active {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 ::selection {
-    background: #decdc3; /* Safari */
+  background: #decdc3; /* Safari */
 }
 
 :root {
-    --lite-green: #a0c1b8;
-    --dark-green: #3f4441;
-    --bg-lite: #ffeadb;
-    --lite-corall: #ff9a76;
-    --font-main: 'Outfit', sans-serif;
-    --font-curs: 'Edu QLD Beginner', cursive
+  --lite-green: #a0c1b8;
+  --dark-green: #3f4441;
+  --bg-lite: #ffeadb;
+  --lite-corall: #ff9a76;
+  --todo: #e1cbd7;
+  --habits: #86a8cf;
+  --goals: #c38eb4;
+  --font-main: "Outfit", sans-serif;
+  --font-curs: "Edu QLD Beginner", cursive;
 }
 
 a {
-    width:max-content;
-    text-decoration: none;
-    color: var(--dark-green);
-    transition: 1s;
-    font-family: var(--font-main);
-    font-weight: 400;
+  width: max-content;
+  text-decoration: none;
+  color: var(--dark-green);
+  transition: 1s;
+  font-family: var(--font-main);
+  font-weight: 400;
 }
 
 input {
-    outline: none;
-    border: 1px solid black;
-    border-radius: 5px;
-    font-family: var(--font-main);
-    font-weight: 400;
-    transition: 1s;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-family: var(--font-main);
+  font-weight: 400;
+  transition: 1s;
 }
-input[type=file]::file-selector-button{
-    background-color: var(--lite-green);
-    border: none;
-    color: var(--dark-green);
-    border-radius: 5px;
+input[type="file"]::file-selector-button {
+  background-color: var(--lite-green);
+  border: none;
+  color: var(--dark-green);
+  border-radius: 5px;
 }
-input:focus, input:hover, button:hover, textarea:focus, textarea:hover, a:focus, a:hover{
-    opacity: 70%;
-    cursor: pointer;
-    outline: none;
+input:focus,
+input:hover,
+button:hover,
+textarea:focus,
+textarea:hover,
+a:focus,
+a:hover {
+  opacity: 70%;
+  cursor: pointer;
+  outline: none;
 }
-textarea{
-    font-family: var(--font-main);
-    font-weight: 400;
-    transition: 1s;
-    resize: none;
-    outline: none;
-    border-radius: 5px;
+textarea {
+  font-family: var(--font-main);
+  font-weight: 400;
+  transition: 1s;
+  resize: none;
+  outline: none;
+  border-radius: 5px;
 }
 
-h1, h2, h3,span {
-    margin: 0;
-    padding: 0;
-    width: max-content;
-    font-family: var(--font-main);
-    font-weight: 600;
-    color: var(--dark-green);
+h1,
+h2,
+h3,
+span {
+  margin: 0;
+  padding: 0;
+  width: max-content;
+  font-family: var(--font-main);
+  font-weight: 600;
+  color: var(--dark-green);
 }
-p{
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-main);
-    font-weight: 600;
-    color: var(--dark-green);
-    word-wrap: break-word;
+p {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  font-weight: 600;
+  color: var(--dark-green);
+  word-wrap: break-word;
 }
-button{
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    transition: 1s;
-    font-family: var(--font-main);
-    font-weight: 600;
-    color: var(--dark-green);
+button {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  transition: 1s;
+  font-family: var(--font-main);
+  font-weight: 600;
+  color: var(--dark-green);
 }
-.layout{
-    display: flex;
+.layout {
+  display: flex;
 }
-.wrap{
-    display: flex;
-    flex: auto;
-    flex-direction: column;
+.wrap {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
 }
-.container-bg{
-    width: 100%;
-    min-height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url("../src/assets/bg.jpg");
+.container-bg {
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../src/assets/bg.jpg");
 }
-.bg{
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 0;
-    width: 100%;
-    opacity: 0.7;
-    background-color: #decdc3;
-    min-height: 100vh;
-    background-attachment: fixed;
+.bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  width: 100%;
+  opacity: 0.7;
+  background-color: #decdc3;
+  min-height: 100vh;
+  background-attachment: fixed;
 }
-.content{
-    position: relative;
-    left: 0;
-    z-index: 2;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
+.content {
+  position: relative;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
 }
-.title{
-    font-weight: 800;
-    width: max-content;
+.wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  width: 100%;
 }
-.vertical-line{
-    display: flex;
-    border-right: 3px var(--lite-green) solid;
+.title {
+  font-weight: 800;
+  width: max-content;
+}
+.vertical-line {
+  display: flex;
+  border-right: 3px var(--lite-green) solid;
 }

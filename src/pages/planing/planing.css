@@ -1,0 +1,20 @@
+.planing-header {
+  display: flex;
+  height: fit-content;
+  justify-content: end;
+  width: 100%;
+}
+.planing-header-btn {
+  font-size: 25px;
+  width: 34%;
+  padding: 6px 0;
+}
+.todo-btn{
+    background-color: var(--todo);
+}
+.habits-btn{
+    background-color: var(--habits);
+}
+.goals-btn{
+    background-color: var(--goals);
+}
