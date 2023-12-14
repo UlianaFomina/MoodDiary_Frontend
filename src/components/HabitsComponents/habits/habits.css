@@ -1,0 +1,21 @@
+.habits {
+  padding: 20px 30px;
+}
+.habits-header {
+  background-color: var(--habits-lite);
+  border-radius: 16px;
+  padding: 15px 25px;
+  max-width: 66%;
+  /* border: 2px solid var(--habits-dark); */
+}
+.habits-header-btn {
+    padding: 8px 25px;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 3px solid var(--habits);
+    font-size: 17px;
+    border-radius: 16px;
+}
+.habits-header-btn:hover{
+    background-color: var(--habits);
+}

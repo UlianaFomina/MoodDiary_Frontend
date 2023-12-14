@@ -1,0 +1,23 @@
+.offers {
+  max-height: 80vh;
+  height: 80vh;
+  position: relative;
+  top: 20px;
+  background-color: var(--todo);
+  width: 27%;
+  padding: 20px;
+  border-radius: 16px;
+  margin: 0 auto;
+  overflow: inherit;
+  overflow-x: hidden;
+}
+.offers-title{
+    padding-bottom: 10px;
+    width: fit-content;
+    margin: 0 auto;
+}
+.offers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

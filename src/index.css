@@ -61,6 +61,8 @@ code {
   --lite-corall: #ff9a76;
   --todo: #e1cbd7;
   --habits: #86a8cf;
+  --habits-lite: #c6d5e8;
+  --habits-dark: #6580a3;
   --goals: #c38eb4;
   --font-main: "Outfit", sans-serif;
   --font-curs: "Edu QLD Beginner", cursive;
@@ -74,8 +76,8 @@ a {
   font-family: var(--font-main);
   font-weight: 400;
 }
-
-input {
+input,
+select {
   outline: none;
   border: 1px solid black;
   border-radius: 5px;
@@ -91,6 +93,8 @@ input[type="file"]::file-selector-button {
 }
 input:focus,
 input:hover,
+select:focus,
+select:hover,
 button:hover,
 textarea:focus,
 textarea:hover,

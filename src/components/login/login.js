@@ -43,7 +43,7 @@ export const Login = ({...props}) => {
                 <form method="POST" onSubmit={handleSubmitLogin} className="entry-box-form">
                     <input disabled={loading} name="username" type="text" placeholder="username" className="entry-box-form-input"
                            required/>
-                    <input disabled={loading} name="password" minLength='6' maxLength='12' type="password" placeholder="password"
+                    <input disabled={loading} name="password" minLength='0' maxLength='12' type="password" placeholder="password"
                            className="entry-box-form-input" required/>
                     <button disabled={loading} type="submit" className="entry-box-form-input">Submit</button>
                 </form>

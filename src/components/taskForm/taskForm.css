@@ -1,0 +1,120 @@
+.form-container {
+  position: absolute;
+  top: -43px;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.689);
+  z-index: 5;
+}
+.task-form {
+  background-color: var(--todo);
+  max-width: 90%;
+  padding: 30px;
+  margin: 0 auto;
+  width: 50%;
+  height: 60 vh;
+  margin-top: 8%;
+  border-radius: 10px;
+}
+.form-title {
+  width: fit-content;
+  display: block;
+  font-size: 23px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+.form-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-input {
+  border: 2px solid var(--goals);
+  background-color: var(--todo);
+  box-shadow: 5px 5px 5px var(--goals);
+}
+.name-input {
+  padding: 10px 15px;
+  font-size: 18px;
+}
+.form-spend-time-input-wrap {
+  display: flex;
+  align-items: center;
+}
+.time-title {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+.time-input {
+  padding: 10px;
+  font-size: 18px;
+  width: 40px;
+  border-radius: 0;
+  border-left: none;
+}
+.option-input {
+  padding: 9.2px 0;
+  font-size: 18px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+}
+
+.form-desc {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 18px;
+  width: 40%;
+  height: 100px;
+}
+.form-flags-container {
+  margin-bottom: 40px;
+}
+.form-flags-group {
+  display: flex;
+  margin-top: 20px;
+  gap: 10px;
+}
+.form-flag-title {
+  font-size: 18px;
+}
+.flag-input {
+  margin-right: 9px;
+}
+input[type="radio"]:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #d1d3d1;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+input[type="radio"]:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: var(--habits);
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+.task-form-btn {
+  display: block;
+  padding: 10px 30px;
+  font-size: 18px;
+  margin: 0 auto;
+}
