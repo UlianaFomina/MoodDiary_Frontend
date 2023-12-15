@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { DateArrow } from "../../Icons/date-arrow.tsx";
-import "./todo.css";
-import { TodoItem } from "../todoItem/todoItem.jsx";
+import { DateArrow } from "../../../Icons/date-arrow";
 import { TaskForm } from "../taskForm/taskForm.jsx";
+import { TodoItem } from "../todoItem/todoItem.jsx";
 import { TodoOffers } from "../todoOffers/todoOffers.jsx";
+import "./todo.css";
 
 export const Todo = () => {
   const [activeDate, setActiveDate] = useState(new Date());

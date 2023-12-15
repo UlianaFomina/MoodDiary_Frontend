@@ -1,21 +1,42 @@
 .habits {
   padding: 20px 30px;
+  display: flex;
+}
+.habits-content {
+  width: 66%;
 }
 .habits-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   background-color: var(--habits-lite);
   border-radius: 16px;
   padding: 15px 25px;
-  max-width: 66%;
+  margin-bottom: 30px;
   /* border: 2px solid var(--habits-dark); */
 }
 .habits-header-btn {
-    padding: 8px 25px;
-    text-transform: uppercase;
-    background-color: transparent;
-    border: 3px solid var(--habits);
-    font-size: 17px;
-    border-radius: 16px;
+  padding: 8px 25px;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 3px solid var(--habits);
+  font-size: 17px;
+  border-radius: 16px;
 }
-.habits-header-btn:hover{
-    background-color: var(--habits);
+.habits-header-svg-btn {
+  background-color: transparent;
+}
+.habits-header-btn:hover {
+  background-color: var(--habits);
+}
+.habits-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.habits-gif {
+  width: 300px;
+  margin-left: 120px;
+  margin-top: 50px;
 }

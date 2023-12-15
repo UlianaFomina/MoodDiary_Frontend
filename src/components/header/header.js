@@ -3,6 +3,7 @@ import "./header.css";
 import { useNavigate } from "react-router-dom";
 import avatar from "../../assets/avatar.jpg";
 import { getById } from "../../service/user";
+import { PlaningIcon } from "../../Icons/planing-icon";
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -76,15 +77,7 @@ export const Header = () => {
           </svg>
         </a>
         <a href={"/planing"} className={"header-link"}>
-          <svg className="header-link-svg" viewBox="100 100 210 210">
-            <g transform="matrix(12.5 0 0 12.5 200 200)">
-              <path
-                transform=" translate(-8, -8)"
-                d="M 0 0 h 1 v 15 h 15 v 1 H 0 V 0 Z m 14.817 3.113 a 0.5 0.5 0 0 1 0.07 0.704 l -4.5 5.5 a 0.5 0.5 0 0 1 -0.74 0.037 L 7.06 6.767 l -3.656 5.027 a 0.5 0.5 0 0 1 -0.808 -0.588 l 4 -5.5 a 0.5 0.5 0 0 1 0.758 -0.06 l 2.609 2.61 l 4.15 -5.073 a 0.5 0.5 0 0 1 0.704 -0.07 Z"
-                strokeLinecap="round"
-              />
-            </g>
-          </svg>
+          <PlaningIcon classname="header-link-svg" />
         </a>
       </div>
       <div className={"header-high"}>
